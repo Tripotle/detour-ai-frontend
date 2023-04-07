@@ -1,4 +1,5 @@
-.PlannerContainer {
+.container {
+  height: 100%;
   display: flex;
   flex-direction: row;
 }
