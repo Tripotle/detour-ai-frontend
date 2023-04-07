@@ -1,0 +1,4 @@
+.PlannerContainer {
+  display: flex;
+  flex-direction: row;
+}

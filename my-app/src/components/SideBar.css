@@ -1,0 +1,56 @@
+.sidebar {
+  width: 300px;
+  height: 100%;
+  padding: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  border-radius: 8px;
+}
+
+.sidebar label {
+  margin-top: 10px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.sidebar input,
+.sidebar select,
+.sidebar textarea {
+  width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.sidebar select {
+  -webkit-appearance: none; /* remove default arrow in Safari */
+  -moz-appearance: none; /* remove default arrow in Firefox */
+  appearance: none; /* remove default arrow in other browsers */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3Cpath d='M480.5 142.2L267.2 355.5c-4.7 4.7-12.3 4.7-17 0L31.5 142.2C26.9 137.6 24 131.6 24 125.5s2.9-12.1 7.5-16.6l18.3-18.3c4.7-4.7 10.6-7.5 16.6-7.5s12.1 2.9 16.6 7.5L256 279.9l168.5-168.5c4.5-4.5 10.5-7.4 16.6-7.4s12.1 2.9 16.6 7.5l18.3 18.3c4.7 4.6 7.6 10.6 7.6 16.6.1 6.1-2.8 12.1-7.4 16.7z'/%3E%3C/svg%3E")
+    no-repeat; /* add custom arrow image */
+  background-position: right center;
+  background-size: 16px 16px; /* set size of custom arrow image */
+}
+
+.sidebar option {
+  width: 100%; /* set the width of options to 100% */
+  box-sizing: border-box; /* include padding and border in total width */
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  background-color: #0062cc;
+}
