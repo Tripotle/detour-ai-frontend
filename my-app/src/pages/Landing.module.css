@@ -1,0 +1,43 @@
+.container {
+  margin: 50px;
+}
+
+.heading {
+  font-weight: 100;
+  font-size: 24px;
+}
+
+.takeMeSomewhere {
+  font-weight: 100;
+  font-family: "Inter, sans-serif";
+  font-size: 28px;
+  display: inline-block;
+}
+
+.input {
+  background-color: #fef9ef;
+  border: 1px solid transparent;
+  border-bottom: 1px solid black;
+  font-weight: 900;
+  width: 120px;
+  resize: horizontal;
+  height: 35px;
+  font-size: 28px;
+  outline: none;
+  text-overflow: ellipsis;
+  display: inline-block;
+  margin-left: 6px;
+  margin-right: 12px;
+}
+
+.button {
+  font-weight: 900;
+  background-color: #17c3b2;
+  border: none;
+  color: #fef9ef;
+  padding: 8px 16px;
+  text-align: center;
+  font-size: 28px;
+  border-radius: 12px;
+  display: inline-block;
+}

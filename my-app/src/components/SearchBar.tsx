@@ -1,21 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Input } from "antd";
 import { LoadScript, Autocomplete } from "@react-google-maps/api";
 
 function SearchBar({
   apiKey,
   placeholder,
+  setValue,
 }: {
   apiKey: string;
   placeholder: string;
+  setValue: any;
 }) {
+  const handleChange = (event: any) => {
+    setValue(event.target.value);
+  };
+
   return (
-    <Autocomplete
-      onLoad={(autocomplete) =>
-        console.log("Autocomplete loaded:", autocomplete)
-      }
-      onPlaceChanged={() => console.log("Place changed")}
-    >
+    <Autocomplete>
       <input
         type="text"
         placeholder={placeholder}
@@ -32,6 +33,7 @@ function SearchBar({
           outline: "none",
           textOverflow: "ellipses",
         }}
+        onChange={handleChange}
       />
     </Autocomplete>
   );
