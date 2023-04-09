@@ -11,7 +11,15 @@ const center = {
   lng: -38.523,
 };
 
-function Map({ apiKey }: { apiKey: string }) {
+function Map({
+  apiKey,
+  start,
+  end,
+}: {
+  apiKey: string;
+  start: string;
+  end: string;
+}) {
   return (
     <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
       {/* Child components, such as markers, info windows, etc. */}

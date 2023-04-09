@@ -2,6 +2,13 @@ import Map from "../components/Map";
 import { useLocation } from "react-router-dom";
 import styles from "./Landing.module.css";
 
+const API_KEY = "AIzaSyAyk1O9rcmRWSSKHN0S5Vo2_iBavhj3DtA";
+
+interface Coord {
+  lat: number;
+  lng: number;
+}
+
 export default function Planner({
   start,
   end,
@@ -19,9 +26,7 @@ export default function Planner({
 }) {
   return (
     <div className={styles.container}>
-      <p>
-        {start} to {end} seeing {adj}
-      </p>
+      <Map apiKey={API_KEY} start={start} end={end} />
     </div>
   );
 }

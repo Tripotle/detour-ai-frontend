@@ -18,24 +18,20 @@ export default function Landing({
     <div className={styles.container}>
       <div>
         <h2 className={styles.heading}>From:</h2>
-        <LoadScript googleMapsApiKey={API_KEY} libraries={["places"]}>
-          <SearchBar
-            apiKey={API_KEY}
-            placeholder={"Boston, MA"}
-            setValue={setStart}
-          />
-        </LoadScript>
+        <SearchBar
+          apiKey={API_KEY}
+          placeholder={"Boston, MA"}
+          setValue={setStart}
+        />
       </div>
       <br />
       <div>
         <h2 className={styles.heading}>To:</h2>
-        <LoadScript googleMapsApiKey={API_KEY} libraries={["places"]}>
-          <SearchBar
-            apiKey={API_KEY}
-            placeholder={"New York, NY"}
-            setValue={setEnd}
-          />
-        </LoadScript>
+        <SearchBar
+          apiKey={API_KEY}
+          placeholder={"New York, NY"}
+          setValue={setEnd}
+        />
       </div>
       <br />
       <br />

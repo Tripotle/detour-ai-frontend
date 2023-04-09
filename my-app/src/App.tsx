@@ -4,6 +4,11 @@ import Landing from "./pages/Landing";
 import Planner from "./pages/Planner";
 import { useState } from "react";
 
+interface Coord {
+  lat: number;
+  lng: number;
+}
+
 function App() {
   const [start, setStart] = useState<string>("");
   const [end, setEnd] = useState<string>("");
