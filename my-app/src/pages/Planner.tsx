@@ -27,9 +27,6 @@ export default function Planner({
 }) {
   return (
     <div className={styles.container}>
-<<<<<<< HEAD
-      <Map apiKey={API_KEY} start={start} end={end} />
-=======
       <Sidebar
         start={start}
         end={end}
@@ -38,10 +35,7 @@ export default function Planner({
         setEnd={setEnd}
         setAdj={setAdj}
       />
-      <p>
-        {start} to {end} seeing {adj}
-      </p>
->>>>>>> dd5ab4b6700fe38e065c38cf245fb82d41531a6b
+      <Map start={start} end={end} apiKey={API_KEY} />
     </div>
   );
 }

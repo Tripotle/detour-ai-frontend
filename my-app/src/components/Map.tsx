@@ -11,7 +11,7 @@ const center = {
   lng: -38.523,
 };
 
-function Map({
+export default function Map({
   apiKey,
   start,
   end,
@@ -21,11 +21,10 @@ function Map({
   end: string;
 }) {
   return (
-    <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-      {/* Child components, such as markers, info windows, etc. */}
-      <></>
-    </GoogleMap>
+    <LoadScript googleMapsApiKey={apiKey}>
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
+        {/* Add markers and other map components here */}
+      </GoogleMap>
+    </LoadScript>
   );
 }
-
-export default React.memo(Map);
