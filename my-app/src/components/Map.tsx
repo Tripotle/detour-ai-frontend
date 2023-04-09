@@ -1,5 +1,10 @@
-import React from "react";
-import { GoogleMap, LoadScript } from "@react-google-maps/api";
+import React, { useState, useRef, useCallback } from "react";
+import {
+  GoogleMap,
+  LoadScript,
+  DirectionsService,
+  DirectionsRenderer,
+} from "@react-google-maps/api";
 
 const containerStyle = {
   width: "400px",
@@ -20,10 +25,48 @@ export default function Map({
   start: string;
   end: string;
 }) {
+  const [response, setResponse] = useState(null);
+  const [directionsRequested, setDirectionsRequested] = useState(false);
+
+  const directionsCallback = useCallback((response: any) => {
+    if (response !== null) {
+      if (response.status === "OK") {
+        setResponse(response);
+        setDirectionsRequested(true);
+      } else {
+        console.log("response: ", response);
+      }
+    }
+  }, []);
+
   return (
     <LoadScript googleMapsApiKey={apiKey}>
-      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-        {/* Add markers and other map components here */}
+      <GoogleMap
+        mapContainerStyle={containerStyle}
+        zoom={2}
+        center={{
+          lat: 0,
+          lng: -180,
+        }}
+      >
+        {!directionsRequested && (
+          <DirectionsService
+            options={{
+              destination: end,
+              origin: start,
+              travelMode: window.google.maps.TravelMode.DRIVING,
+            }}
+            callback={directionsCallback}
+          />
+        )}
+
+        {response !== null && (
+          <DirectionsRenderer
+            options={{
+              directions: response,
+            }}
+          />
+        )}
       </GoogleMap>
     </LoadScript>
   );

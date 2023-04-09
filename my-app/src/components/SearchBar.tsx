@@ -17,9 +17,8 @@ function SearchBar({
     autocompleteRef.current = autocomplete;
     listenerRef.current = autocomplete.addListener("place_changed", () => {
       const place = autocomplete.getPlace();
-      setValue(
-        `${place.geometry.location.lat(0)},${place.geometry.location.lng(0)}`
-      );
+      console.log(place.formatted_address);
+      setValue(place.formatted_address);
     });
   }, []);
 
